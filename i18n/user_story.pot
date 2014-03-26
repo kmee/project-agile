@@ -7,14 +7,13 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-06 14:23+0000\n"
-"PO-Revision-Date: 2013-11-07 04:49+0000\n"
+"PO-Revision-Date: 2014-03-06 14:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-03-22 07:08+0000\n"
-"X-Generator: Launchpad (build 16967)\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: user_story
 #: view:user.story:0
@@ -55,8 +54,7 @@ msgstr ""
 
 #. module: user_story
 #: view:user.story:0
-msgid ""
-"The link to the project, all projects listed here\n"
+msgid "The link to the project, all projects listed here\n"
 "                    are of the lower level available in the Master WBS."
 msgstr ""
 
@@ -169,9 +167,7 @@ msgstr ""
 
 #. module: user_story
 #: help:user.story,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
 msgstr ""
 
 #. module: user_story
@@ -194,14 +190,11 @@ msgstr ""
 
 #. module: user_story
 #: view:user.story:0
-msgid ""
-"Here in the description, you must be as explícit as you can,\n"
+msgid "Here in the description, you must be as explícit as you can,\n"
 "                    Remember you can upload a Youtube video, and insert \n"
-"                    directly here, embeded as a webpage, you can use vimeo "
-"and \n"
+"                    directly here, embeded as a webpage, you can use vimeo and \n"
 "                    other elements as images, diagrams (using some \n"
-"                    online services) you just must copy and paste the "
-"embeded code,\n"
+"                    online services) you just must copy and paste the embeded code,\n"
 "                    you can see an example about how to do that"
 msgstr ""
 
@@ -319,10 +312,7 @@ msgstr ""
 
 #. module: user_story
 #: help:user.story,user_execute_id:0
-msgid ""
-"Person responsible for user story takes place, either by delegating work to "
-"other human resource or running it by itself. For delegate work should "
-"monitor the proper implementation of associated activities."
+msgid "Person responsible for user story takes place, either by delegating work to other human resource or running it by itself. For delegate work should monitor the proper implementation of associated activities."
 msgstr ""
 
 #. module: user_story
@@ -450,14 +440,12 @@ msgstr ""
 
 #. module: user_story
 #: help:user.story,priority_level:0
-msgid ""
-"User story level priority, used to define priority for each user story"
+msgid "User story level priority, used to define priority for each user story"
 msgstr ""
 
 #. module: user_story
 #: view:user.story:0
-msgid ""
-"A deeper explanation about what an user story is can be \n"
+msgid "A deeper explanation about what an user story is can be \n"
 "                found here."
 msgstr ""
 
@@ -468,10 +456,7 @@ msgstr ""
 
 #. module: user_story
 #: help:user.story,user_id:0
-msgid ""
-"Person responsible for interacting with the client to give details of the "
-"progress or completion of the User Story, in some cases also the supervisor "
-"for the correct execution of the user story."
+msgid "Person responsible for interacting with the client to give details of the progress or completion of the User Story, in some cases also the supervisor for the correct execution of the user story."
 msgstr ""
 
 #. module: user_story
@@ -536,19 +521,14 @@ msgstr ""
 
 #. module: user_story
 #: model:ir.actions.act_window,help:user_story.action_user_story
-msgid ""
-"<p class=\"oe_view_nocontent_create\">Behaviour-driven development is an \n"
-"      “outside-in” methodology. It starts at the outside by identifying "
-"business \n"
-"      outcomes, and then drills down into the feature set that will achieve "
-"\n"
-"      those outcomes. Each feature is captured as a “story”, which defines "
-"the \n"
+msgid "<p class=\"oe_view_nocontent_create\">Behaviour-driven development is an \n"
+"      “outside-in” methodology. It starts at the outside by identifying business \n"
+"      outcomes, and then drills down into the feature set that will achieve \n"
+"      those outcomes. Each feature is captured as a “story”, which defines the \n"
 "      scope of the feature along with its acceptance criteria. \n"
 "      This article introduces the BDD approach to defining and identifying \n"
 "      stories and their acceptance criteria.</p><p>\n"
-"      <a href=\"http://dannorth.net/whats-in-a-story/\" target=\"_NEW\">Here "
-"more information</a>\n"
+"      <a href=\"http://dannorth.net/whats-in-a-story/\" target=\"_NEW\">Here more information</a>\n"
 "      </p>\n"
 "      "
 msgstr ""
@@ -618,13 +598,11 @@ msgstr ""
 
 #. module: user_story
 #: view:user.story:0
-msgid ""
-"Please load as attachment, all documents that support \n"
+msgid "Please load as attachment, all documents that support \n"
 "                your explanations \n"
 "                here on xmind or other formats with the explanations \n"
 "                that you need to fill here.\n"
-"                An example with all reference about topics you must consider "
-"\n"
+"                An example with all reference about topics you must consider \n"
 "                is available"
 msgstr ""
 
@@ -670,8 +648,7 @@ msgstr ""
 
 #. module: user_story
 #: help:user.story,task_ids:0
-msgid ""
-"Draft procurement of\n"
+msgid "Draft procurement of\n"
 "                                            the product and location\n"
 "                                            of that orderpoint"
 msgstr ""
@@ -697,3 +674,4 @@ msgstr ""
 #: view:user.story:0
 msgid "Sprint"
 msgstr ""
+
