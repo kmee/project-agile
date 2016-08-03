@@ -1,0 +1,82 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* user_story_messages
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-01 23:31+0000\n"
+"PO-Revision-Date: 2016-08-01 23:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: user_story_messages
+#: model:ir.model,name:user_story_messages.model_user_story
+msgid "User Story"
+msgstr "User Story"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,name:user_story_messages.mt_us_approved
+msgid "User Story Approved"
+msgstr "User Story Aprovada"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,name:user_story_messages.mt_us_cancelled
+msgid "User Story Cancelled"
+msgstr "User Story Cancelada"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,name:user_story_messages.mt_us_done
+msgid "User Story Done"
+msgstr "User Story Feita"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,name:user_story_messages.mt_us_open
+msgid "User Story In Progress"
+msgstr "User Story Em Progresso"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,name:user_story_messages.mt_us_new
+msgid "User Story New"
+msgstr "Nova User Story"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,name:user_story_messages.mt_us_pending
+msgid "User Story Pending"
+msgstr "User Story Pendente"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,description:user_story_messages.mt_us_approved
+msgid "User story approved"
+msgstr "User story aprovada"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,description:user_story_messages.mt_us_cancelled
+msgid "User story cancelled"
+msgstr "User story cancelada"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,description:user_story_messages.mt_us_done
+msgid "User story done"
+msgstr "User story feita"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,description:user_story_messages.mt_us_open
+msgid "User story in progress"
+msgstr "User story em progresso"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,description:user_story_messages.mt_us_new
+msgid "User story new"
+msgstr "Nova User story"
+
+#. module: user_story_messages
+#: model:mail.message.subtype,description:user_story_messages.mt_us_pending
+msgid "User story pending"
+msgstr "User story pendente"
+

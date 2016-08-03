@@ -416,7 +416,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0px; padding: 0px;  background-color: rgb(253, 253, 253);">
                                         <tr>
                                             <td class="headerContent">
-                                                <img src="https://pbs.twimg.com/profile_images/2137139487/logo-vauxoo-lp.jpg" style="max-width:60px; padding: 2px 2px 2px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowtext />
+                                                <img src="data:image/png;base64,${object.project_id.company_id.logo}" style="max-width:60px; padding: 2px 2px 2px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowtext />
                                             </td>
 
                                             <td class="headerContent" width="100%" style="padding-left:10px; padding-right:20px;">
@@ -903,7 +903,7 @@ For any questions we are at your disposal.
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0px; padding: 0px;  background-color: rgb(253, 253, 253);">
                                         <tr>
                                             <td class="headerContent">
-                                                <img src="https://pbs.twimg.com/profile_images/2137139487/logo-vauxoo-lp.jpg" style="max-width:60px; padding: 2px 2px 2px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowtext />
+                                                <img src="data:image/png;base64,${object.project_id.company_id.logo}" style="max-width:60px; padding: 2px 2px 2px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowtext />
                                             </td>
 
                                             <td class="headerContent" width="100%" style="padding-left:10px; padding-right:20px;">
@@ -1387,7 +1387,7 @@ For any questions we are at your disposal.
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0px; padding: 0px;  background-color: rgb(253, 253, 253);">
                                         <tr>
                                             <td class="headerContent">
-                                                <img src="https://pbs.twimg.com/profile_images/2137139487/logo-vauxoo-lp.jpg" style="max-width:60px; padding: 2px 2px 2px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowtext />
+                                                <img src="data:image/png;base64,${object.project_id.company_id.logo}" style="max-width:60px; padding: 2px 2px 2px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowtext />
                                             </td>
 
                                             <td class="headerContent" width="100%" style="padding-left:10px; padding-right:20px;">
@@ -1871,7 +1871,7 @@ For any questions we are at your disposal.
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0px; padding: 0px;  background-color: rgb(253, 253, 253);">
                                         <tr>
                                             <td class="headerContent">
-                                                <img src="https://pbs.twimg.com/profile_images/2137139487/logo-vauxoo-lp.jpg" style="max-width:60px; padding: 2px 2px 2px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowtext />
+                                                <img src="data:image/png;base64,${object.project_id.company_id.logo}" style="max-width:60px; padding: 2px 2px 2px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowtext />
                                             </td>
 
                                             <td class="headerContent" width="100%" style="padding-left:10px; padding-right:20px;">
@@ -1922,13 +1922,13 @@ User history has culminated, is currently awaiting you proceed with the verifica
                                                                 <pre style="font-size:1.1em; font-family:Arial">
 The process to follow is:
 
-1) Enter the database Vauxoo through the link at the bottom of this email.
+1) Enter the database ${object.project_id.company_id.name|safe} through the link at the bottom of this email.
 2) Select the button "edit" in the user story.
 3) Check Acceptance Criteria.
 4) Check that the acceptance criteria are met.
 5) Once checked each criterion to select "OK" indicating that it complies with the revised result box.
 
-All acceptance criteria shall be re-validated by a consultant Vauxoo the end of the Sprint, so to formally close the compliance requirement.
+All acceptance criteria shall be re-validated by a consultant ${object.project_id.company_id.name|safe} the end of the Sprint, so to formally close the compliance requirement.
 
 
 Thanking your attention.

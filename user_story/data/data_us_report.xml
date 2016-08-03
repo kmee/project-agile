@@ -22,7 +22,7 @@
                     <body style="border:0; margin: 0;" onload="subst()">
                         <table style="border-top: 1px solid black; width: 100%">
                             <tr >
-                                <td style="text-align:left;font-size:7;" width="50%">Generado con software libre en OpenERP y Webkit por http://www.vauxoo.com</td>
+                                <td style="text-align:left;font-size:7;" width="50%">Generado con software libre en Odoo y Webkit</td>
                                 <td style="text-align:right;font-size:11;" width="45%">Page <span class="page"/></td><td style="text-align:left;font-size:11;" width="5%">  of <span class="topage"/></td>
                             </tr>
                         </table>
@@ -368,7 +368,7 @@ margin-bottom:20px;
 }
 
 ]]> </field>
-            <field name="name">User Story Report Vauxoo Webkit</field>
+            <field name="name">User Story Report Webkit</field>
         </record>
         <record id="ir_header_img_companylogo0" model="ir.header_img">
             <field eval="&quot;&quot;&quot;jpg&quot;&quot;&quot;" name="type"/>

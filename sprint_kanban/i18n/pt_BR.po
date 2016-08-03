@@ -1,0 +1,393 @@
+﻿# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sprint_kanban
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-01 23:29+0000\n"
+"PO-Revision-Date: 2016-08-01 23:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sprint_kanban
+#: model:ir.actions.act_window,help:sprint_kanban.action_view_task
+msgid "<p class=\"oe_view_nocontent_create\">Click to start a new Sprint.</p>\n"
+"      "
+msgstr "<p class=\"oe_view_nocontent_create\">Clique aqui para iniciar um novo Sprint.</p>\n"
+"      "
+
+#. module: sprint_kanban
+#: help:sprint.kanban,kanban_state:0
+msgid "A task's kanban state indicate\n"
+"                                                 special situations\n"
+"                                                 affecting it:\n"
+"\n"
+"                                               * Normal is the default\n"
+"                                                 situation\n"
+"\"\n"
+"                                               * Blocked indicates something\n"
+"                                                 is preventing the progress\n"
+"                                                 of this task\n"
+"\n"
+"                                               * Ready To Pull indicates the\n"
+"                                                 task is ready to be pulled\n"
+"                                                 to the next stage"
+msgstr "A situação do estado kanban de uma tarefa indica\n"
+"                                                 situações especiais\n"
+"                                                 que a afetam:\n"
+"\n"
+"                                               * Normal é a situação\n"
+"                                                 padrão\n"
+"\"\n"
+"                                               * Bloqueado indica que algo\n"
+"                                                 está evitando o progresso\n"
+"                                                 desta tarefa\n"
+"\n"
+"                                               * Pronto para Prosseguir indica que\n"
+"                                                 a tarefa está pronta para prosseguir\n"
+"                                                 para o próximo estágio"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,user_id:0
+msgid "Assigned to"
+msgstr "Designado para"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.view_sprint_kanban
+#: selection:sprint.kanban,kanban_state:0
+msgid "Blocked"
+msgstr "Bloqueado"
+
+#. module: sprint_kanban
+#: field:project.task,blueprint:0
+msgid "Blueprint"
+msgstr "Diagrama"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: sprint_kanban
+#: selection:sprint.kanban,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: sprint_kanban
+#: help:project.task,use_phases:0
+#: help:sprint.kanban,use_phases:0
+msgid "Check this field if you plan\n"
+"                                             to use phase-based scheduling"
+msgstr "Marque este campo se você planeja\n"
+"                                             usar agendamento em fases"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,color:0
+msgid "Color Index"
+msgstr "Índice de Cor"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: sprint_kanban
+#: help:sprint.kanban,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Data da última mensagem postada no registro."
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.view_sprint_kanban
+msgid "Delete"
+msgstr "Deletar"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,display_name:0
+msgid "Display Name"
+msgstr "Nome"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_form_view
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_form_view
+#: selection:sprint.kanban,state:0
+msgid "Done"
+msgstr "Completo"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.view_sprint_kanban
+msgid "Edit..."
+msgstr "Editar..."
+
+#. module: sprint_kanban
+#: model:ir.model,name:sprint_kanban.model_sprint_kanban
+msgid "Email Thread"
+msgstr "Tópico do E-mail"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,dateend:0
+msgid "End Date"
+msgstr "Data Final"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,message_follower_ids:0
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: sprint_kanban
+#: help:sprint.kanban,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Contém o resumo de conversas (número de mensagens, etc). Este resumo foi gerado em formato html para ser inserido em visão kanban."
+
+#. module: sprint_kanban
+#: field:sprint.kanban,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sprint_kanban
+#: help:sprint.kanban,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Se marcado, novas mensagens requerirão sua atenção."
+
+#. module: sprint_kanban
+#: selection:sprint.kanban,priority:0
+msgid "Important"
+msgstr "Importante"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.view_sprint_kanban
+#: selection:sprint.kanban,state:0
+msgid "In Progress"
+msgstr "Em Progresso"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_form_view
+msgid "Initialize"
+msgstr "Inicie"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,message_is_follower:0
+msgid "Is a Follower"
+msgstr "É um Seguidor"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,kanban_state:0
+msgid "Kanban State"
+msgstr "Estado Kanban"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,message_last_post:0
+msgid "Last Message Date"
+msgstr "Data da Última Mensagem"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,__last_update:0
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Alteração em"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,write_date:0
+msgid "Last Updated on"
+msgstr "Última Alteração em"
+
+#. module: sprint_kanban
+#: selection:sprint.kanban,priority:0
+msgid "Low"
+msgstr "Baixo"
+
+#. module: sprint_kanban
+#: selection:sprint.kanban,priority:0
+msgid "Medium"
+msgstr "Medio"
+
+#. module: sprint_kanban
+#: field:project.task,merge_proposal:0
+msgid "Merge Proposal"
+msgstr "Proposta de Integração"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,message_ids:0
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: sprint_kanban
+#: help:sprint.kanban,message_ids:0
+msgid "Messages and communication history"
+msgstr "Histórico de mensagens and Comunicações"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,name:0
+msgid "Name Sprint"
+msgstr "Nome do Sprint"
+
+#. module: sprint_kanban
+#: selection:sprint.kanban,state:0
+msgid "New"
+msgstr "Novo"
+
+#. module: sprint_kanban
+#: selection:sprint.kanban,kanban_state:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: sprint_kanban
+#: model:ir.actions.act_window,name:sprint_kanban.action_view_task_overpassed_draft
+msgid "Overpassed Tasks"
+msgstr "Tarefas Atrasadas"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_form_view
+#: selection:sprint.kanban,state:0
+msgid "Pending"
+msgstr "Pendente"
+
+#. module: sprint_kanban
+#: field:project.task,use_phases:0
+#: field:sprint.kanban,use_phases:0
+msgid "Phases"
+msgstr "Fases"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.view_sprint_kanban
+#: field:sprint.kanban,priority:0
+msgid "Priority"
+msgstr "Prioridade"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_form_view
+#: field:sprint.kanban,project_id:0
+msgid "Project"
+msgstr "Projeto"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,members:0
+msgid "Project Members"
+msgstr "Membros do Projeto"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_form_view
+msgid "Re-Open Sprint"
+msgstr "Reabrir Sprint"
+
+#. module: sprint_kanban
+#: selection:sprint.kanban,kanban_state:0
+msgid "Ready To Pull"
+msgstr "Pronto para Puxar"
+
+#. module: sprint_kanban
+#: field:project.task,res_id:0
+msgid "Revno"
+msgstr "Rev#"
+
+#. module: sprint_kanban
+#: model:ir.ui.menu,name:sprint_kanban.sprint_kanban_menu
+#: view:project.task:sprint_kanban.view_task_search_form_user_story
+#: field:project.task,sprint_id:0
+msgid "Sprint"
+msgstr "Sprint"
+
+#. module: sprint_kanban
+#: model:res.groups,name:sprint_kanban.group_sprint_kanban_manager
+msgid "Sprint / Manager"
+msgstr "Sprint / Gerente"
+
+#. module: sprint_kanban
+#: model:res.groups,name:sprint_kanban.group_sprint_kanban_user
+msgid "Sprint / User"
+msgstr "Sprint / Usuário"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_form_view
+msgid "Sprint Kanban Form"
+msgstr "Formulário Kanban do Sprint"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_tree_view
+msgid "Sprint Kanban Tree"
+msgstr "Árvore Kanban do Sprint"
+
+#. module: sprint_kanban
+#: model:ir.actions.act_window,name:sprint_kanban.action_view_task
+msgid "Sprints"
+msgstr "Sprints"
+
+#. module: sprint_kanban
+#: view:sprint.kanban:sprint_kanban.view_sprint_kanban
+msgid "Stage Done"
+msgstr "Estágio Concluído"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,datestart:0
+msgid "Start Date"
+msgstr "Data Inicial"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,state:0
+msgid "Status"
+msgstr "Estado"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,message_summary:0
+msgid "Summary"
+msgstr "Resumo"
+
+#. module: sprint_kanban
+#: model:ir.model,name:sprint_kanban.model_project_task
+msgid "Task"
+msgstr "Tarefa"
+
+#. module: sprint_kanban
+#: model:ir.actions.act_window,name:sprint_kanban.act_project_project_2_project_task_all
+#: view:sprint.kanban:sprint_kanban.sprint_kanban_form_view
+msgid "Tasks"
+msgstr "Tarefas"
+
+#. module: sprint_kanban
+#: view:project.task:sprint_kanban.inherit_tasks_sprint_kanban_form_view
+msgid "Tecnical Features"
+msgstr "Características Técnicas"
+
+#. module: sprint_kanban
+#: field:sprint.kanban,message_unread:0
+msgid "Unread Messages"
+msgstr "Mensagens não lidas"
+
+#. module: sprint_kanban
+#: field:project.task,url_branch:0
+msgid "Url Branch"
+msgstr "Url Branch"
+
+#. module: sprint_kanban
+#: selection:sprint.kanban,priority:0
+msgid "Very Low"
+msgstr "Muito Baixo"
+
+#. module: sprint_kanban
+#: selection:sprint.kanban,priority:0
+msgid "Very important"
+msgstr "Muito Importante"
+

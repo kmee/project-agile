@@ -19,7 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-
+from openerp import SUPERUSER_ID
 from openerp.osv import fields, osv
 
 
@@ -88,6 +88,11 @@ class ProjectTask(osv.osv):
             mail_obj.send_mail(cr, uid, [mail_ids], context=context)
 
         return False
+
+    def get_odoo_url(self, cr, uid, ids, context=None):
+
+        return self.pool.get('ir.config_parameter').get_param(
+            cr, SUPERUSER_ID, 'web.base.url')
 
     _track = {'stage_id': {'project.mt_task_stage': send_mail_task_new_test, }}
 
