@@ -47,7 +47,6 @@
             <field name="model_id" ref="project.model_project_task" />
             <field name="subject">#${object.id} - ${object.name} - ${object.partner_id.name and object.partner_id.name or ''}</field>
             <field name="auto_delete" eval="True"/>
-            <field name="mail_server_id" ref="template_outgoing_mail_server"/>
             <field name="email_to">${object.user_id.email}</field>
             <field name="body_html"><![CDATA[<html>
     <head>
@@ -565,7 +564,6 @@
             <field name="model_id" ref="project.model_project_task" />
             <field name="subject">End Task - #${object.id} - ${object.name} - ${object.partner_id.name and object.partner_id.name or ''}</field>
             <field name="auto_delete" eval="True"/>
-            <field name="mail_server_id" ref="template_outgoing_mail_server"/>
             <field name="email_to">${object.user_id.email}</field>
             <field name="body_html"><![CDATA[<html>
     <head>
@@ -1083,7 +1081,6 @@
             <field name="model_id" ref="project.model_project_task" />
             <field name="subject">Reporte de Credenciales resultado de la Instalacion del Server - ${object.partner_id.name and object.partner_id.name or ''}</field>
             <field name="auto_delete" eval="True"/>
-            <field name="mail_server_id" ref="template_outgoing_mail_server"/>
             <field name="email_to">${object.user_id.email}</field>
             <field name="body_html"><![CDATA[<html>
 <head>
