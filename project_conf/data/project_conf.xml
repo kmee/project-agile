@@ -494,11 +494,6 @@
                                                                             <br />
                                                                             <br />
                                                                             % endif
-                                                                            <strong>Instruciones:</strong>
-                                                                            <br />
-                                                                              <a href="https://erp.vauxoo.com/vauxoo_doc/static/html/OperationManuals/project_and_task.html">Manejo de Tareas</a> 
-                                                                            <br />
-                                                                            <br />
                                                                             %if object.manager_id.name:
                                                                             <strong>Responsable - Proy.:</strong>
                                                                             <br />
