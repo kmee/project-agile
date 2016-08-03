@@ -477,7 +477,7 @@
                                                                         <div mc:edit="std_content01" >
                                                                             <strong>Acesso Sistema</strong>
                                                                             <br />
-                                                                            <a>https://erp.vauxoo.com</a>
+                                                                            <a>${object.get_odoo_url()}</a>
                                                                             <br />
                                                                             <br />
                                                                             %if object.date_deadline:
@@ -1000,7 +1000,7 @@
                                                                         <div mc:edit="std_content01" >
                                                                             <strong>Acesso Sistema</strong>
                                                                             <br />
-                                                                            <a>https://erp.vauxoo.com</a>
+                                                                            <a>${object.get_odoo_url()}</a>
                                                                             <br />
                                                                             <br />
                                                                             %if object.date_deadline:
