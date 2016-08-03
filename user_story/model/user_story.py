@@ -24,6 +24,7 @@ import time
 from openerp import SUPERUSER_ID, api
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
+from urlparse import urljoin
 
 _US_STATE = [
     ('draft', _('New')), ('open', _('In Progress')), ('pending', _('Pending')),
@@ -356,7 +357,14 @@ class UserStory(osv.Model):
         """
         usname = self.browse(cr, uid, ids).name
         username = self.pool.get('res.users').browse(cr, uid, uid).name
+        url = self.pool.get('ir.config_parameter').get_param(
+            cr, SUPERUSER_ID, 'web.base.url')
         link = '#id={i}&view_type=form&model=user.story'.format(i=ids)
+
+        if '/web' not in url:
+            url = urljoin(url, 'web/')
+        link = urljoin(url, link)
+
         return _(u'''<html><div>
                  <h2>{usname}</h2>
                  <p>The user {user} has approved the user Story
@@ -492,9 +500,16 @@ class AcceptabilityCriteria(osv.Model):
         answers in the do_disaproval method.
         """
         model_brw = self.browse(cr, uid, ids[0])
+
+        url = self.pool.get('ir.config_parameter').get_param(
+            cr, SUPERUSER_ID, 'web.base.url')
+
         link = '#id={i}&view_type=form&model=user.story'.\
             format(i=model_brw.accep_crit_id and model_brw.accep_crit_id.id)
-        return link
+
+        if '/web' not in url:
+            url = urljoin(url, 'web/')
+        return urljoin(url, link)
 
     def approve(self, cr, uid, ids, context=None):
         """Approve a acceptabilty criteria and send an email.
