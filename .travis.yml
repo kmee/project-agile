@@ -58,9 +58,15 @@ env:
 # - TRANSIFEX="1"
 
 virtualenv:
-  system_site_packages: true
+  system_site_packages: truegi
 
 install:
+  # Temporary solution:
+  - git config --global user.email bot@odoo-community.org
+  - git config --global user.name "OCA Bot"
+  - git -C $TRAVIS_BUILD_DIR fetch https://github.com/OCA/project.git $VERSION
+  - git -C $TRAVIS_BUILD_DIR merge --no-edit -X theirs FETCH_HEAD
+
   - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
