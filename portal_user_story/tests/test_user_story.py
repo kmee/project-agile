@@ -33,10 +33,12 @@ class TestUserStory(TransactionCase):
             cr, uid, 'project', 'project_project_1')
         daniel_brw = self.user.browse(cr, uid, daniel_user.id)
         self.project.write(cr, uid, [project_2.id], {
-                           'message_follower_ids': [(4, daniel_brw.partner_id.id)]})
+            'message_follower_ids': [
+                (4, daniel_brw.partner_id.id)]})
         project_ids = self.project.search(cr, daniel_user.id, [])
         self.assertIn(project_2.id, project_ids,
-                      'An User can not watch a project whose partner is the parent partner of him')
+                      'An User can not watch a project whose partner is '
+                      'the parent partner of him')
 
     @mute_logger('openerp.addons.base.ir.ir_model', 'openerp.osv.orm')
     def test_customer_changes_user_story(self):
@@ -53,8 +55,10 @@ class TestUserStory(TransactionCase):
 
         # If the customer is not owner of the user history, he cannot approve
         # the user story
-        self.assertRaises(except_orm, self.story.do_approval, cr, charlie_user.id,
-                          [story_1.id])
+        self.assertRaises(
+            except_orm, self.story.do_approval, cr, charlie_user.id,
+            [story_1.id])
         # Onlye the owner of the user story can change it and approve it
-        self.assertTrue(self.story.do_approval(cr, daniel_user.id, [story_1.id]),
-                        "The owner of an user story can not approve it")
+        self.assertTrue(
+            self.story.do_approval(cr, daniel_user.id, [story_1.id]),
+            "The owner of an user story can not approve it")
