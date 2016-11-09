@@ -28,7 +28,7 @@
     "name": "Project Configuration",
     "version": "8.0.0.0.6",
     "depends": ["base", "project", "email_template"],
-    "author": "Vauxoo",
+    "author": "Vauxoo, Odoo Community Association (OCA)",
     "website": "http://vauxoo.com",
     "license": "AGPL-3",
     "category": "Generic Modules",

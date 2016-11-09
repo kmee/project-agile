@@ -33,7 +33,7 @@
         "portal",
         "portal_project",
     ],
-    "author": "Vauxoo",
+    "author": "Vauxoo, Odoo Community Association (OCA)",
     "website": "http://vauxoo.com",
     "license": "AGPL-3",
     "category": "Generic Modules",

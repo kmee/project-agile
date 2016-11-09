@@ -1,5 +1,6 @@
 <openerp>
     <data>
+
         <report
             id="user_story_report"
             model="user.story"
@@ -26,7 +27,4 @@
 
 
     </data>
-
-
-
 </openerp>
