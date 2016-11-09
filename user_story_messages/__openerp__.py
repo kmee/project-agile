@@ -3,12 +3,12 @@
 #    Module Writen to OpenERP, Open Source Management Solution             #
 #    Copyright (C) Vauxoo (<http://vauxoo.com>).                           #
 #    All Rights Reserved                                                   #
-###############Credits######################################################
+# #############Credits######################################################
 #    Coded by: Sabrina Romero (sabrina@vauxoo.com)                         #
 #    Planified by: Nhomar Hernandez (nhomar@vauxoo.com)                    #
 #    Finance by: Vauxoo <info@vauxoo.com>                                  #
 #    Audited by: Moises Lopez <moylop260@vauxoo.com>                       #
-############################################################################
+# ##########################################################################
 #    This program is free software: you can redistribute it and/or modify  #
 #    it under the terms of the GNU General Public License as published by  #
 #    the Free Software Foundation, either version 3 of the License, or     #
@@ -25,7 +25,7 @@
 {
     "name": "User Story Messages",
     "version": "8.0.0.1.6",
-    "author": "Vauxoo",
+    "author": "Vauxoo, Odoo Community Association (OCA)",
     "category": "Generic Modules",
     "website": "http://www.vauxoo.com/",
     "license": "AGPL-3",

@@ -232,13 +232,13 @@ class UserStory(osv.Model):
                             translate=True, track_visibility='onchange'),
         'owner_id': fields.many2one('res.users', 'Owner',
                                     help="User Story's Owner, generally the "
-                                    "person which asked to develop "
-                                    "this feature",
+                                         "person which asked to develop "
+                                         "this feature",
                                     track_visibility='always'),
         'approval_user_id': fields.many2one('res.users',
                                             'Approver',
                                             help="User which approve "
-                                            "this USer Story"),
+                                                 "this USer Story"),
         'code': fields.char('Code', size=64, readonly=False),
         'planned_hours': fields.float('Planned Hours'),
         'project_id': fields.many2one('project.project', 'Project',
@@ -288,7 +288,7 @@ class UserStory(osv.Model):
                                help='Allows you to show the help in the form'),
         'approved': fields.boolean('Approved',
                                    help='Has been this user story '
-                                   'approved by customer',
+                                        'approved by customer',
                                    track_visibility='onchange'),
         'invoiceable_hours': fields.function(
             _expended_hours_get,
@@ -322,7 +322,7 @@ class UserStory(osv.Model):
         'state': 'draft',
         'priority_level': lambda self, cr, uid, ctx: self.pool.get(
             'user.story.priority').search(
-                cr, uid, [('name', 'like', 'Secondary')], context=ctx)[0],
+            cr, uid, [('name', 'like', 'Secondary')], context=ctx)[0],
         'help': True,
     }
 
@@ -411,8 +411,8 @@ class UserStory(osv.Model):
                 'model': 'user.story',
                 'res_id': i,
                 'subject':
-                (u'{name} Approved the User Story with id {number}'.format(
-                    number=i, name=user.name)),
+                    (u'{name} Approved the User Story with id {number}'.format(
+                        number=i, name=user.name)),
                 'body_html': body,
                 'recipient_ids': [(6, 0, followers)],
                 'auto_delete': True,
@@ -480,7 +480,7 @@ class UserStoryDifficulty(osv.Model):
 class AcceptabilityCriteria(osv.Model):
     _name = 'acceptability.criteria'
     _description = 'Acceptability Criteria'
-    _order="sequence"
+    _order = "sequence"
 
     def _get_ac_ids_by_us_ids(self, cr, uid, us_ids, context=None):
         """This method is as the method of the sensitive store tuple for the
@@ -496,15 +496,15 @@ class AcceptabilityCriteria(osv.Model):
         return ac_ids
 
     def get_body_disapproval(self, cr, uid, ids, context=None):
-        """TODO: This body must be verified to give the information regarding the
-        answers in the do_disaproval method.
+        """TODO: This body must be verified to give the information regarding
+         the answers in the do_disaproval method.
         """
         model_brw = self.browse(cr, uid, ids[0])
 
         url = self.pool.get('ir.config_parameter').get_param(
             cr, SUPERUSER_ID, 'web.base.url')
 
-        link = '#id={i}&view_type=form&model=user.story'.\
+        link = '#id={i}&view_type=form&model=user.story'. \
             format(i=model_brw.accep_crit_id and model_brw.accep_crit_id.id)
 
         if '/web' not in url:
@@ -572,12 +572,12 @@ class AcceptabilityCriteria(osv.Model):
             'views': [[res_id, 'form']],
             'target': 'new',
             'context': {
-                    'default_res_model': 'user.story',
-                    'default_mail_compose_log': True,
-                    'default_model': 'user.story',
-                    'default_res_id': user_story_brw.id,
-                    'default_partner_ids': [(6, 0, partner_ids)],
-                    'default_body':
+                'default_res_model': 'user.story',
+                'default_mail_compose_log': True,
+                'default_model': 'user.story',
+                'default_res_id': user_story_brw.id,
+                'default_partner_ids': [(6, 0, partner_ids)],
+                'default_body':
                     _('<b>Description the cause of disapproval</b>'),
             }
         }
@@ -679,7 +679,7 @@ class AcceptabilityCriteria(osv.Model):
         'scenario': fields.text('Scenario', required=True, translate=True),
         'accep_crit_id': fields.many2one('user.story',
                                          'User Story',
-                                         ondelete='cascade',),
+                                         ondelete='cascade', ),
         'accep_crit_state': fields.function(
             _get_user_story_state,
             type='selection',
@@ -838,7 +838,6 @@ class ProjectTask(osv.Model):
 
 
 class InheritProject(osv.Model):
-
     """Inheirt project model to a new Descripcion field"""
 
     _inherit = 'project.project'

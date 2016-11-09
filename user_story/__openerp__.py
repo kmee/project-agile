@@ -26,7 +26,7 @@
 {
     "name": "User Story",
     "version": "8.0.0.3.0",
-    "author": "Vauxoo",
+    "author": "Vauxoo, Odoo Community Association (OCA)",
     "category": "Generic Modules",
     "website": "http://vauxoo.com",
     "license": "",

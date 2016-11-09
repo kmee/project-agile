@@ -3,7 +3,7 @@
 #    Module Writen to OpenERP, Open Source Management Solution             #
 #    Copyright (C) Vauxoo (<http://vauxoo.com>).                           #
 #    All Rights Reserved                                                   #
-###############Credits######################################################
+# #############Credits######################################################
 #    Coded by: Sabrina Romero (sabrina@vauxoo.com)                         #
 #    Planified by: Nhomar Hernandez (nhomar@vauxoo.com)                    #
 #    Finance by: Vauxoo <info@vauxoo.com>                                  #

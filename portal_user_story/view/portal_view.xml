@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <openerp>
-<data>
+    <data>
     <!--Action An Menu to test User Stories on Portal
          -->
     <record id="open_view_user_stories" model="ir.actions.act_window">

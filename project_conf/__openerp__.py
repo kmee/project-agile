@@ -4,11 +4,11 @@
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    d$
-###############Credits######################################################
+# #############Credits######################################################
 #    Coded by: Vauxoo C.A. (Maria Gabriela Quilarque)
 #    Planified by: Nhomar Hernandez
 #    Audited by: Vauxoo C.A.
-##############################################################################
+# ############################################################################
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -28,7 +28,7 @@
     "name": "Project Configuration",
     "version": "8.0.0.0.6",
     "depends": ["base", "project", "email_template"],
-    "author": "Vauxoo",
+    "author": "Vauxoo, Odoo Community Association (OCA)",
     "website": "http://vauxoo.com",
     "license": "AGPL-3",
     "category": "Generic Modules",
