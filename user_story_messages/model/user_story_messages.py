@@ -23,10 +23,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>. #
 ############################################################################
 
-from openerp.osv import osv
+from odoo import models
 
 
-class UserStory(osv.osv):
+class UserStory(models.Model):
     _description = "User Story Messages"
     _inherit = 'user.story'
 
@@ -43,8 +43,8 @@ class UserStory(osv.osv):
         },
     }
 
-    def message_track(self, cr, uid, ids, tracked_fields, initial_values, context=None):
-        for proc in self.browse(cr, uid, ids, context=context):
-            if tracked_fields.get("description", False) and proc.state == 'draft':
+    def message_track(self, tracked_fields, initial_values):
+        for proc in self.browse(ids):
+            if tracked_fields.Get("description", False) and proc.state == 'draft':
                 return True
-        return super(UserStory, self).message_track(cr, uid, [proc.id], tracked_fields, initial_values, context=context)
+        return super(UserStory, self).message_track([proc.id], tracked_fields, initial_values)

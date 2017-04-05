@@ -1,8 +1,8 @@
 # coding: utf-8
-from openerp.tests.common import TransactionCase
-from openerp.osv.orm import except_orm
+from odoo.tests.common import TransactionCase
+from odoo.models.orm import except_orm
 import threading
-from openerp.tools import mute_logger
+from odoo.tools import mute_logger
 
 
 class TestUserStory(TransactionCase):
@@ -15,7 +15,7 @@ class TestUserStory(TransactionCase):
         self.data = self.registry('ir.model.data')
         self.message = self.registry('mail.message')
 
-    @mute_logger('openerp.addons.base.ir.ir_model', 'openerp.osv.orm')
+    @mute_logger('openerp.addons.base.ir.ir_model', 'openerp.models.orm')
     def test_salesman_configuration_contrac(self):
         cr, uid = self.cr, self.uid
         # Salesman configures portal access
@@ -31,17 +31,17 @@ class TestUserStory(TransactionCase):
         # to the project user
         project_2 = self.data.get_object(
             cr, uid, 'project', 'project_project_1')
-        daniel_brw = self.user.browse(cr, uid, daniel_user.id)
-        self.project.write(cr, uid, [project_2.id], {
+        daniel_brw = self.user.browse(daniel_user.id)
+        self.project.write([project_2.id], {
                            'message_follower_ids': [(4, daniel_brw.partner_id.id)]})
-        project_ids = self.project.search(cr, daniel_user.id, [])
+        project_ids = self.project.search([])
         self.assertIn(project_2.id, project_ids,
                       'An User can not watch a project whose partner is the parent partner of him')
 
-    @mute_logger('openerp.addons.base.ir.ir_model', 'openerp.osv.orm')
+    @mute_logger('openerp.addons.base.ir.ir_model', 'openerp.models.orm')
     def test_customer_changes_user_story(self):
         cr, uid = self.cr, self.uid
-        story_1 = self.data.get_object(cr, uid, 'user_story', 'us_1')
+        story_1 = self.data.get_object('user_story', 'us_1')
         daniel_user = self.data.get_object(
             cr, uid, 'portal_user_story', 'user_story_demo_user_1')
         charlie_user = self.data.get_object(
@@ -56,5 +56,5 @@ class TestUserStory(TransactionCase):
         self.assertRaises(except_orm, self.story.do_approval, cr, charlie_user.id,
                           [story_1.id])
         # Onlye the owner of the user story can change it and approve it
-        self.assertTrue(self.story.do_approval(cr, daniel_user.id, [story_1.id]),
+        self.assertTrue(self.story.do_approval([story_1.id]),
                         "The owner of an user story can not approve it")

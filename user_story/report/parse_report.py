@@ -23,16 +23,16 @@
 
 from lxml import html
 
-from openerp.report import report_sxw
+from odoo.report import report_sxw
 
 
 class StoryUserHtml(report_sxw.rml_parse):
 
-    def __init__(self, cr, uid, name, context=None):
+    def __init__(self, name):
         if context is None:
             context = {}
         super(StoryUserHtml, self).__init__(
-            cr, uid, name, context=context)
+            cr, uid, name)
         self.localcontext.update({
             'parse_html_field': self._parse_html_field,
         })

@@ -1,60 +1,60 @@
 # coding: utf-8
 
-from openerp.osv import osv, fields
+from odoo import models, fields
 
 
-class SprintKanban(osv.Model):
+class SprintKanban(models.Model):
 
-    def set_done(self, cr, uid, ids, context=None):
-        self.write(cr, uid, ids, {'state': 'done'}, context=context)
+    def set_done(self):
+        self.write(ids, {'state': 'done'})
         return True
 
-    def set_cancel(self, cr, uid, ids, context=None):
+    def set_cancel(self):
 
-        self.write(cr, uid, ids, {'state': 'cancelled'}, context=context)
+        self.write(ids, {'state': 'cancelled'})
         return True
 
-    def set_pending(self, cr, uid, ids, context=None):
-        self.write(cr, uid, ids, {'state': 'pending'}, context=context)
+    def set_pending(self):
+        self.write(ids, {'state': 'pending'})
         return True
 
-    def set_open(self, cr, uid, ids, context=None):
-        self.write(cr, uid, ids, {'state': 'open'}, context=context)
+    def set_open(self):
+        self.write(ids, {'state': 'open'})
         return True
 
     _name = 'sprint.kanban'
     _inherit = ['mail.thread', 'ir.needaction_mixin']
 
-    _columns = {
-        'use_phases': fields.boolean('Phases',
+
+    use_phases = fields.Boolean('Phases'
                                      help="""Check this field if you plan
                                              to use phase-based scheduling"""),
-        'name': fields.char('Name Sprint', 264, required=True),
-        'project_id': fields.many2one('project.project', 'Project',
+    name = fields.Char('Name Sprint', 264, required=True)
+    project_id = fields.Many2one('project.project', 'Project'
                                       ondelete="cascade"),
-        'description': fields.text('Description'),
-        'datestart': fields.date('Start Date'),
-        'dateend': fields.date('End Date'),
-        'color': fields.integer('Color Index'),
-        'members': fields.many2many('res.users', 'project_user_rel',
+    description = fields.Text('Description')
+    datestart = fields.Date('Start Date')
+    dateend = fields.Date('End Date')
+    color = fields.Integer('Color Index')
+    members = fields.Many2many('res.users', 'project_user_rel'
                                     'project_id', 'uid', 'Project Members',
                                     states={'close': [('readonly', True)],
                                             'cancelled': [('readonly', True)],
                                             }),
-        'priority': fields.selection([('4', 'Very Low'),
+    priority = fields.Selection([('4', 'Very Low')
                                       ('3', 'Low'),
                                       ('2', 'Medium'),
                                       ('1', 'Important'),
                                       ('0', 'Very important')],
-                                     'Priority', select=True),
-        'state': fields.selection([('draft', 'New'),
+                                     'Priority', index=True),
+    state = fields.Selection([('draft', 'New')
                                    ('open', 'In Progress'),
                                    ('cancelled', 'Cancelled'),
                                    ('pending', 'Pending'),
                                    ('done', 'Done')],
                                   'Status', required=True,),
-        'user_id': fields.many2one('res.users', 'Assigned to'),
-        'kanban_state': fields.selection([('normal', 'Normal'),
+    user_id = fields.Many2one('res.users', 'Assigned to')
+    kanban_state = fields.Selection([('normal', 'Normal')
                                           ('blocked', 'Blocked'),
                                           ('done', 'Ready To Pull')],
                                          'Kanban State',
@@ -70,28 +70,28 @@ class SprintKanban(osv.Model):
                                                  task is ready to be pulled
                                                  to the next stage""",
                                          readonly=True, required=False),
-    }
 
-    def set_kanban_state_blocked(self, cr, uid, ids, context=None):
-        self.write(cr, uid, ids, {'kanban_state': 'blocked'}, context=context)
+
+    def set_kanban_state_blocked(self):
+        self.write(ids, {'kanban_state': 'blocked'})
         return False
 
-    def set_kanban_state_normal(self, cr, uid, ids, context=None):
-        self.write(cr, uid, ids, {'kanban_state': 'normal'}, context=context)
+    def set_kanban_state_normal(self):
+        self.write(ids, {'kanban_state': 'normal'})
         return False
 
-    def set_kanban_state_done(self, cr, uid, ids, context=None):
-        self.write(cr, uid, ids, {'kanban_state': 'done'}, context=context)
+    def set_kanban_state_done(self):
+        self.write(ids, {'kanban_state': 'done'})
         return False
 
-    def set_priority(self, cr, uid, ids, priority, *args):
-        return self.write(cr, uid, ids, {'priority': priority})
+    def set_priority(self, priority, *args):
+        return self.write(ids, {'priority': priority})
 
-    def set_high_priority(self, cr, uid, ids, *args):
-        return self.set_priority(cr, uid, ids, '1')
+    def set_high_priority(self, *args):
+        return self.set_priority(ids, '1')
 
-    def set_normal_priority(self, cr, uid, ids, *args):
-        return self.set_priority(cr, uid, ids, '2')
+    def set_normal_priority(self, *args):
+        return self.set_priority(ids, '2')
 
     _defaults = {
         'state': 'draft',
@@ -99,18 +99,18 @@ class SprintKanban(osv.Model):
     }
 
 
-class SprintKanbanTasks(osv.Model):
+class SprintKanbanTasks(models.Model):
 
     _inherit = 'project.task'
 
-    _columns = {
-        'use_phases': fields.boolean('Phases',
+
+    use_phases = fields.Boolean('Phases'
                                      help="""Check this field if you plan
                                              to use phase-based scheduling"""),
-        'sprint_id': fields.many2one('sprint.kanban', 'Sprint',
+    sprint_id = fields.Many2one('sprint.kanban', 'Sprint'
                                      ondelete="cascade"),
-        'url_branch': fields.char('Url Branch', 264),
-        'merge_proposal': fields.char('Merge Proposal', 264),
-        'blueprint': fields.char('Blueprint', 264),
-        'res_id': fields.char('Revno', 64),
-    }
+    url_branch = fields.Char('Url Branch', 264)
+    merge_proposal = fields.Char('Merge Proposal', 264)
+    blueprint = fields.Char('Blueprint', 264)
+    res_id = fields.Char('Revno', 64)
+

@@ -19,15 +19,15 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
+from odoo import fields, models
 
 
-class AccountAnalyticAccount(osv.Model):
+class AccountAnalyticAccount(models.Model):
     _inherit = "account.analytic.account"
 
-    def _remaining_hours_calc(self, cr, uid, ids, name, arg, context=None):
+    def _remaining_hours_calc(self, name, arg):
         res = {}
-        for account in self.browse(cr, uid, ids, context=context):
+        for account in self.browse(ids):
             if account.quantity_max != 0:
                 res[account.id] = account.quantity_max - \
                     account.invoiceables_hours
@@ -36,16 +36,16 @@ class AccountAnalyticAccount(osv.Model):
             res[account.id] = round(res.get(account.id, 0.0), 2)
         return res
 
-    def _get_invoiceables_hours(self, cr, uid, ids, args,
-                                _fields, context=None):
+    def _get_invoiceables_hours(self, args,
+                                _fields):
         if context is None:
             context = {}
         res = {}
         total = 0
         for _id in ids:
-            acl_obj = self.pool.get('account.analytic.line')
-            acl_srch = acl_obj.search(cr, uid, [('account_id', '=', _id)])
-            acl_brw = acl_obj.browse(cr, uid, acl_srch)
+            acl_obj = self.env['account.analytic.line']
+            acl_srch = acl_obj.search([('account_id', '=', _id)])
+            acl_brw = acl_obj.browse(acl_srch)
             for acl in acl_brw:
                 if acl.to_invoice:
                     total = total + (acl.unit_amount -
@@ -54,14 +54,14 @@ class AccountAnalyticAccount(osv.Model):
             res[_id] = total
         return res
 
-    _columns = {
-        'invoiceables_hours': fields.function(_get_invoiceables_hours,
+
+    invoiceables_hours = fields.Function(_get_invoiceables_hours
                                               type='float',
                                               string='Units Invoiceable',
                                               help='Total units of hours to \
                                               charge.'),
-        'remaining_hours': fields.function(_remaining_hours_calc, type='float',
+    remaining_hours = fields.Float(compute="_remaining_hours_calc"
                                            string='Remaining Time',
                                            help="Computed using the formula: \
                                            Maximum Time - Total Worked Time"),
-    }
+
