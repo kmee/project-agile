@@ -22,7 +22,7 @@
 import time
 
 from openerp import SUPERUSER_ID, api
-from openerp.osv import fields, osv
+from openerp import fields, models
 from openerp.tools.translate import _
 from urlparse import urljoin
 
@@ -32,7 +32,7 @@ _US_STATE = [
 ]
 
 
-class UserStory(osv.Model):
+class UserStory(models.Model):
     _name = 'user.story'
     _description = 'User Story'
     _order = 'id desc'
@@ -447,7 +447,7 @@ class UserStory(osv.Model):
                           context=context)
 
 
-class UserStoryPriority(osv.Model):
+class UserStoryPriority(models.Model):
     _name = 'user.story.priority'
     _description = "User Story Priority Level"
     _columns = {
@@ -455,7 +455,7 @@ class UserStoryPriority(osv.Model):
     }
 
 
-class UserStoryDifficulty(osv.Model):
+class UserStoryDifficulty(models.Model):
     _name = 'user.story.difficulty'
     _description = "User Story Difficulty Level"
     _order = "points asc"
@@ -477,7 +477,7 @@ class UserStoryDifficulty(osv.Model):
     }
 
 
-class AcceptabilityCriteria(osv.Model):
+class AcceptabilityCriteria(models.Model):
     _name = 'acceptability.criteria'
     _description = 'Acceptability Criteria'
     _order="sequence"
@@ -785,7 +785,7 @@ class AcceptabilityCriteria(osv.Model):
     }
 
 
-class ProjectTask(osv.Model):
+class ProjectTask(models.Model):
     _inherit = 'project.task'
 
     def default_get(self, cr, uid, field, context=None):
@@ -837,7 +837,7 @@ class ProjectTask(osv.Model):
     }
 
 
-class InheritProject(osv.Model):
+class InheritProject(models.Model):
 
     """Inheirt project model to a new Descripcion field"""
 

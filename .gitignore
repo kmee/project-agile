@@ -57,3 +57,5 @@ docs/_build/
 
 # OSX Files
 *.DS_Store
+
+user_story/model/odoo_7_to_8
