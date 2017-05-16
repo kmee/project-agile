@@ -1,0 +1,3 @@
+#!/bin/bash
+#perl -pe '$x = 1 and $_ = "\n" if /_columns/; if(/    \}/ and $x) { $x = 0; $_ = "\n"; }; $u = uc $2 and $_ = "    $1 = fields\.$u$3\n" if /'"'"'(.*?)'"'"': fields\.(.)(.*?)\n/' $1
+perl -pe 's/    _columns = {(.*?)\n    }/$1\n/gs; $u = uc $2 and $_ = "    $1 = fields\.$u$3\n" if /'"'"'(.*?)'"'"': fields\.(.)(.*?)\n/' $1

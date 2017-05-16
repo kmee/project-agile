@@ -1,0 +1,49 @@
+#!/bin/bash
+# IMPORTS
+# replace osv, orm
+find . -type f -name $1 | xargs sed -i 's/from openerp.osv import orm$/from odoo import models/g'
+find . -type f -name $1 | xargs sed -i 's/from openerp.models.orm import Model$/from openerp.models import Model/g'
+find . -type f -name $1 | xargs sed -i 's/osv.osv_memory/models.TransientModel/g'
+find . -type f -name $1 | xargs sed -i 's/osv.osv/models.Model/g'
+find . -type f -name $1 | xargs sed -i 's/osv.except_osv/UserError/g'
+find . -type f -name $1 | xargs sed -i 's/osv\./models./g'
+find . -type f -name $1 | xargs sed -i 's/\<orm\./models./g'
+find . -type f -name $1 | xargs sed -i 's/\(import .*\), osv/\1, models/g'
+find . -type f -name $1 | xargs sed -i 's/\(import .*\)osv, /\1models, /g'
+find . -type f -name $1 | xargs sed -i 's/\(import .*\)osv/\1models/g'
+
+find . -type f -name $1 | xargs sed -i 's/\(import .*\), orm/\1/g'
+find . -type f -name $1 | xargs sed -i 's/\(import .*\)orm, /\1/g'
+find . -type f -name $1 | xargs sed -i 's/^.*import orm$//g'
+
+find . -type f -name $1 | xargs sed -i 's/openerp.osv/openerp/g'
+
+# replace http import
+#find . -type f -name $1 | xargs sed -i 's/from openerp.addons.web import http/from odoo import http/g'
+#find . -type f -name $1 | xargs sed -i 's/openerp.addons.web.http/odoo.http/g'
+#find . -type f -name $1 | xargs sed -i 's/openerp.http/odoo.http/g'
+
+# replace odoo
+# fix importing. Otherwise you will get error:
+#   AttributeError: 'module' object has no attribute 'session_dir'
+#find . -type f -name $1 | xargs sed -i 's/openerp.tools.config/odoo.tools.config/g'
+
+# general replacement
+#find . -type f -name $1 | xargs sed -i 's/from openerp/from odoo/g'
+
+# retira o _columns
+find . -type f -name $1 | xargs perl -i -p0e 's/    _columns = \{(.*?)\n    \}/$1\n/gs'
+# formata as declarações de campos
+find . -type f -name $1 | xargs perl -i -pe '$u = uc $2 and $_ = "    $1 = fields\.$u$3\n" if /'"'"'(.*?)'"'"': fields\.(.)(.*?)\n/'
+# retira virgulas do final das declarações de campos
+find . -type f -name $1 | xargs perl -i -pe '$x += ($str =~ /\(|'"'"'\)'"'"'/); $x -= ($str =~ /\)/); next LINE if $x; $_ = substr $_, 0, -2 and $_ = "$_\n" if substr($_, -3) eq "\),\n"'
+# pool -> env
+#find . -type f -name $1 | xargs sed -i 's/self.pool/self.env/g'
+# remove cr, uid
+#find . -type f -name $1 | xargs sed -i 's/(cr, [^,]*, /(/g'
+#find . -type f -name $1 | xargs sed -i 's/(self, cr, [^,]*, ids/(self/g'
+#find . -type f -name $1 | xargs sed -i 's/(self, cr, uid, /(self, /g'
+#find . -type f -name $1 | xargs sed -i 's/, context=[^,)]*//g'
+#find . -type f -name $1 | xargs sed -i 's/self.env.get(\([^)]*\))/self.env[\1]/g'
+# res_config.py
+# find . -type f -name 'res_config.py' | xargs sed -i 's/\(def get_default_.*\)(self)/\1(self, fields)/g'
