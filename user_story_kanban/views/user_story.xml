@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+   <record model="ir.ui.view" id="user_story_kanban_view">
+        <field name="name">user.story.kanban (in user_story_kanban)</field>
+        <field name="model">user.story</field>
+        <field name="arch" type="xml">
+		<kanban default_group_by="state">
+                    <field name="color"/>
+                    <field name="priority_level"/>
+                    <field name="state"/>
+                    <field name="user_id"/>
+                    <field name="description"/>
+                    <field name="sequence"/>
+                    <field name="categ_ids"/>
+                    <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_dropdown_toggle oe_dropdown_kanban" groups="base.group_user">
+                                <span class="oe_e">í</span>
+                                <ul class="oe_dropdown_menu">
+                                    <t t-if="widget.view.is_action_enabled('edit')"><li><a type="edit">Edit...</a></li></t>
+                                    <t t-if="widget.view.is_action_enabled('delete')"><li><a type="delete">Delete</a></li></t>
+                                    <br/>
+                                    <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                </ul>
+                            </div>
+
+                            <div class="oe_kanban_content">
+                                <div><b><field name="name"/></b></div>
+                                <div>
+                                    <field name="project_id"/><br/>
+                                </div>
+                                <div class="oe_kanban_footer_left" style="margin-top:5px;">
+                                    <field name="categ_ids"/>
+                                </div>
+                            </div>
+                            <div class="oe_clear"/>
+                        </div>
+                    </t>
+                    </templates>
+                </kanban>
+        </field>
+    </record>
+
+   <record model="ir.ui.view" id="user_story_form_view">
+        <field name="name">user.story.form (in user_story_kanban)</field>
+        <field name="model">user.story</field>
+        <field name="inherit_id" ref="user_story.view_userstory_form"/>
+        <field name="arch" type="xml">
+            <button name="do_cancel" position="after">
+             <button name="do_af" string="Análise Funcional" type="object"/>
+             <button name="do_at" string="Análise Técnica" type="object"/>
+             <button name="do_backlog" string="Backlog" type="object"/>
+             <button name="do_sprint" string="Sprint Backlog" type="object"/>
+            </button>
+        </field>
+    </record>
+
+<!--    <record model="ir.ui.view" id="user_story_tree_view">
+        <field name="name">user.story.tree (in user_story_kanban)</field>
+        <field name="model">user.story</field>
+        <field name="inherit_id" ref="TODO othermodule.tree_view"/>
+        <field name="arch" type="xml">
+        </field>
+    </record>-->
+
+    <record model="ir.actions.act_window" id="user_story.action_user_story">
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+</data>
+</openerp>

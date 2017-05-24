@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<!--    <record model="ir.ui.view" id="user_story_priority_form_view">
+        <field name="name">user.story.priority.form (in user_story_kanban)</field>
+        <field name="model">user.story.priority</field>
+        <field name="inherit_id" ref="TODO othermodule.form_view"/>
+        <field name="arch" type="xml">
+           
+        </field>
+    </record>-->
+
+
+
+
+</data>
+</openerp>
