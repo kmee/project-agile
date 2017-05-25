@@ -11,11 +11,13 @@
     'author': 'KMEE,Odoo Community Association (OCA)',
     'website': 'www.kmee.com.br',
     'depends': [
-	'user_story_scrum',
+	    'user_story_scrum',
     ],
     'data': [
         'views/user_story_priority.xml',
         'views/user_story.xml',
+        'views/user_story_type_view.xml',
+        'data/user_story_type_data.xml',
     ],
     'demo': [
     ],

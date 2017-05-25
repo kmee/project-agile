@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+        <record forcecreate="False" id="project_stage_data_0" model="user.story.type">
+            <field name="sequence">1</field>
+            <field name="name">Novo</field>
+            <!--<field name="project_ids" eval="[(4, ref('project_project_data'))]"/>-->
+        </record>
+
+        <record forcecreate="False" id="project_stage_data_1" model="user.story.type">
+            <field name="sequence">100</field>
+            <field name="name">Análise Funcional</field>
+            <!--<field name="project_ids" eval="[(4, ref('project_project_data'))]"/>-->
+        </record>
+
+        <record forcecreate="False" id="project_stage_data_2" model="user.story.type">
+            <field name="sequence">200</field>
+            <field name="name">Análise Técnica</field>
+            <!--<field name="project_ids" eval="[(4, ref('project_project_data'))]"/>-->
+        </record>
+
+        <record forcecreate="False" id="project_stage_data_3" model="user.story.type">
+            <field name="sequence">300</field>
+            <field name="name">Product Backlog</field>
+            <!--<field name="project_ids" eval="[(4, ref('project_project_data'))]"/>-->
+        </record>
+
+        <record forcecreate="False" id="project_stage_data_4" model="user.story.type">
+            <field name="sequence">400</field>
+            <field name="name">Sprint Backlog</field>
+            <!--<field name="project_ids" eval="[(4, ref('project_project_data'))]"/>-->
+        </record>
+
+        <record forcecreate="False" id="project_stage_data_5" model="user.story.type">
+            <field name="sequence">500</field>
+            <field name="name">Em Progresso</field>
+            <!--<field name="project_ids" eval="[(4, ref('project_project_data'))]"/>-->
+        </record>
+
+        <record forcecreate="False" id="project_stage_data_6" model="user.story.type">
+            <field name="sequence">600</field>
+            <field name="name">Pendente</field>
+            <!--<field name="project_ids" eval="[(4, ref('project_project_data'))]"/>-->
+        </record>
+
+        <record forcecreate="False" id="project_stage_data_9" model="user.story.type">
+            <field name="sequence">99999</field>
+            <field name="name">Em Produção</field>
+            <!--<field name="project_ids" eval="[(4, ref('project_project_data'))]"/>-->
+        </record>
+</data>
+</openerp>
